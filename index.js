@@ -1,7 +1,14 @@
 const buttonBar = document.querySelector("#btn-bar")
+const categories = ["Creatures", "Equipment", "Materials","Monsters", "Treasure"]
 
-
-
+function createButtons() {
+    for (let i = 0; i < categories.length; i++) {
+        const btn = document.createElement("button")
+        btn.id = "button" + i;
+        btn.textContent = categories[i]
+        buttonBar.appendChild(btn)
+    }
+}
 
 async function fetchURL(){
     try {
@@ -14,5 +21,8 @@ async function fetchURL(){
     }
 };
 
-fetchURL()
+
+
+createButtons();
+fetchURL();
 
