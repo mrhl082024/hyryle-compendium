@@ -7,6 +7,20 @@ function createButtons() {
         btn.id = "button" + i;
         btn.textContent = categories[i]
         buttonBar.appendChild(btn)
+
+        btn.addEventListener("click", () => {
+           try {
+            const response = fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/category/${btn.textContent}`);
+            const data = response.json();
+           } catch (error) {
+            throw new Error(error);
+           }
+           const dataName = document.createElement("h1")
+           const dataImg = document.createElement("img")
+           const dataDescription = document.createElement("h3");
+           const dataDrops = document.createElement("h3")
+
+        })
     }
 }
 
