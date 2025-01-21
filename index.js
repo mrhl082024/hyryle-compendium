@@ -1,3 +1,8 @@
+const buttonBar = document.querySelector("#btn-bar")
+
+
+
+
 async function fetchURL(){
     try {
         const response = await fetch("https://botw-compendium.herokuapp.com/api/v3/compendium/all")
@@ -10,3 +15,4 @@ async function fetchURL(){
 };
 
 fetchURL()
+
