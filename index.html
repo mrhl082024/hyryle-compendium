@@ -6,16 +6,34 @@
     <title>Hyrule-Compendium</title>
 </head>
 <style>
+    @font-face {
+        font-family:"hyrule-serif";
+        src: url(./fonts/HyliaSerifBeta-Regular.otf);
+    }
     *{
         padding: 0;
+        margin: 0;
         border: 0;
         box-sizing: border-box;
+        font-family: "hyrule-serif", sans-serif;
+        color: #432f0f;
+        font-size: larger;
     }
-
     header{
         text-align: center;
+        background: linear-gradient(#0e5135, #4aba91);
+        border: inset 3px #d4ce46;
+        text-shadow: 2px 2px 4px #4aba91;
+        
     }
-
+    main{
+        width: 100%;
+        height: 500px;
+        background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("images/zelda-botw-wallpaper.webp");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
     footer{
         text-align: center;
     }
@@ -23,7 +41,8 @@
 <body>
     <header>
         <h1>Hyrule-Compendium</h1>
-        <h3>A collection of Botw information.</h3>
+        <h3>A collection of BOTW information.</h3>
+        <input id="search-bar" type="text" placeholder="search">
         <nav>
             <button></button>
             <button></button>
@@ -40,7 +59,7 @@
     <footer>
         <h2>Please note that this site is still under development.</h2>
         <h3>If you find any information lacking or wrong, you can send a request to notareal@email.com</h3>
-        <h3>Thank you! for your understanding and we value your feedback!</h3>
+        <h3>Thank you! For your understanding and we value your feedback!</h3>
     </footer>
 
 
