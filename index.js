@@ -26,7 +26,7 @@ const monstersData = await monstersResponse.json();
 const treasureResponse = await fetch(
   "https://botw-compendium.herokuapp.com/api/v3/compendium/category/treasure"
 );
-const treasuretData = await treasureResponse.json();
+const treasureData = await treasureResponse.json();
 
 const btnBar = document.querySelector("#btn-bar");
 const middleDiv = document.querySelector("#middle-div");
@@ -126,11 +126,48 @@ async function createButtons() {
     button3.addEventListener("click", () => {
       console.log("monsters");
       middleDiv.textContent = "";
+
+      for (let i = 0; i < monstersData.data.length; i++) {
+        const monstersName = document.createElement("h1");
+        monstersName.textContent = monstersData.data[i].name;
+
+        const monstersImg = document.createElement("img");
+        monstersImg.src = monstersData.data[i].image;
+
+        const monstersDescription = document.createElement("h3");
+        monstersDescription.textContent = monstersData.data[i].description;
+
+        const monstersCard = document.createElement("div");
+        monstersCard.id = "monsterscard" + i;
+        monstersCard.appendChild(monstersName);
+        monstersCard.appendChild(monstersImg);
+        monstersCard.appendChild(monstersDescription);
+
+        middleDiv.appendChild(monstersCard);
+      }
     });
     //what happends when i press treasure button
     button4.addEventListener("click", () => {
       console.log("treasure");
       middleDiv.textContent = "";
+      for (let i = 0; i < treasureData.data.length; i++) {
+        const treasureName = document.createElement("h1");
+        treasureName.textContent = treasureData.data[i].name;
+
+        const treasureImg = document.createElement("img");
+        treasureImg.src = treasureData.data[i].image;
+
+        const treasureDescription = document.createElement("h3");
+        treasureDescription.textContent = treasureData.data[i].description;
+
+        const treasureCard = document.createElement("div");
+        treasureCard.id = "treasurecard" + i;
+        treasureCard.appendChild(treasureName);
+        treasureCard.appendChild(treasureImg);
+        treasureCard.appendChild(treasureDescription);
+
+        middleDiv.appendChild(treasureCard);
+      }
     });
   });
 }
