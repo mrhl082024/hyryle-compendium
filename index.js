@@ -1,18 +1,35 @@
-//Old buttons, try to not use, bad practice!
-/* const creatureButton = document.querySelector("#Creatures")
-const equipmentButton = document.querySelector("#Equipment")
-const materialsButton = document.querySelector("#Materials")
-const monstersButton = document.querySelector("#Monsters")
-const treasureButton = document.querySelector("#Treasure") */
-
+//api fetch for creature data
 const creaturesResponse = await fetch(
   "https://botw-compendium.herokuapp.com/api/v3/compendium/category/creatures"
 );
 const creaturesData = await creaturesResponse.json();
 
+//api fetch for equipment data
+const equipmentResponse = await fetch(
+  "https://botw-compendium.herokuapp.com/api/v3/compendium/category/equipment"
+);
+const equipmentData = await equipmentResponse.json();
+
+//api fetch for materials data
+const materialsResponse = await fetch(
+  "https://botw-compendium.herokuapp.com/api/v3/compendium/category/materials"
+);
+const materialsData = await materialsResponse.json();
+
+//api fetch for monsters data
+const monstersResponse = await fetch(
+  "https://botw-compendium.herokuapp.com/api/v3/compendium/category/monsters"
+);
+const monstersData = await monstersResponse.json();
+
+//api fetch for treasure data
+const treasureResponse = await fetch(
+  "https://botw-compendium.herokuapp.com/api/v3/compendium/category/treasure"
+);
+const treasuretData = await treasureResponse.json();
+
 const btnBar = document.querySelector("#btn-bar");
 const middleDiv = document.querySelector("#middle-div");
-
 
 const myButtonArray = [
   "Creatures",
@@ -22,7 +39,7 @@ const myButtonArray = [
   "Treasure",
 ];
 
-function createButtons() {
+async function createButtons() {
   for (let i = 0; i < myButtonArray.length; i++) {
     const button = document.createElement("button");
     button.id = "button" + i;
@@ -35,10 +52,12 @@ function createButtons() {
   const button3 = document.querySelector("#button3");
   const button4 = document.querySelector("#button4");
 
+  //what happends when i press creature button
   button0.addEventListener("click", () => {
     console.log("creatures");
     middleDiv.textContent = "";
     for (let i = 0; i < creaturesData.data.length; i++) {
+
       const creatureName = document.createElement("h1");
       creatureName.textContent = creaturesData.data[i].name;
 
@@ -47,7 +66,7 @@ function createButtons() {
 
       const creatureDescription = document.createElement("h3");
       creatureDescription.textContent = creaturesData.data[i].description;
-        
+
       const infoCard = document.createElement("div");
       infoCard.id = "infocard" + i;
       infoCard.appendChild(creatureName);
@@ -56,23 +75,27 @@ function createButtons() {
 
       middleDiv.appendChild(infoCard);
     }
+    //what happends when i press equipment button
     button1.addEventListener("click", () => {
-        console.log("equipment")
-        middleDiv.textContent = "";
-    })
+      console.log("equipment");
+      middleDiv.textContent = "";
+      
+    });
+    //what happends when i press materials
     button2.addEventListener("click", () => {
-        console.log("materials")
-        middleDiv.textContent = "";
-    })
+      console.log("materials");
+      middleDiv.textContent = "";
+    });
+    //what happends when i press monsters button
     button3.addEventListener("click", () => {
-        console.log("monsters")
-        middleDiv.textContent = "";
-    })
+      console.log("monsters");
+      middleDiv.textContent = "";
+    });
+    //what happends when i press treasure button
     button4.addEventListener("click", () => {
-        console.log("treasure")
-        middleDiv.textContent = "";
-    })
-    
+      console.log("treasure");
+      middleDiv.textContent = "";
+    });
   });
 }
 createButtons();
