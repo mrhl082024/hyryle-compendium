@@ -1,105 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hyrule-Compendium</title>
-</head>
-<style>
+  </head>
+  <style>
     @font-face {
-        font-family:"hyrule-serif";
-        src: url(./fonts/HyliaSerifBeta-Regular.otf);
+      font-family: "hyrule-serif";
+      src: url(./fonts/HyliaSerifBeta-Regular.otf);
     }
-    *{
-        padding: 0;
-        margin: 0;
-        border: 0;
-        box-sizing: border-box;
-        font-family: "hyrule-serif", verdana;
-        color: #dadada;
-        font-size: larger;
+    * {
+      padding: 0;
+      margin: 0;
+      border: 0;
+      box-sizing: border-box;
+      font-family: "hyrule-serif", verdana;
+      color: #dadada;
+      font-size: larger;
     }
-    header{
-        
-        width: 100%;
-        text-align: center;
-        background: linear-gradient(#08472d, #4aba91);
-        border:solid 3px 3px 0px 3px #e2a437;
+    header {
+      width: 100%;
+      text-align: center;
+      background: linear-gradient(#08472d, #4aba91);
+      border: solid 3px 3px 0px 3px #e2a437;
     }
-    #search-bar{
-        text-align: center;
-        font-size: large;
-        border-radius: 4px;
-        border: solid 2px #d1d1d1;
-        background-color: #333333;
+    #search-bar {
+      text-align: center;
+      font-size: large;
+      border-radius: 4px;
+      border: solid 2px #d1d1d1;
+      background-color: #333333;
     }
-    button{
-        font-size: large;
-        width:10%;
-        margin: 0px 5px 0px 5px;
-        background-color: #084b2f;
-        border: solid 2px #d1d1d1;
-        border-radius: 4px;
-        text-align: center;
+    button {
+      font-size: large;
+      width: 10%;
+      margin: 0px 5px 0px 5px;
+      background-color: #084b2f;
+      border: solid 2px #d1d1d1;
+      border-radius: 4px;
+      text-align: center;
     }
-    main{
-        text-align: center;
-        width: 100%;
-        height:900px;
-        background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) ), url("./images/zeldaBotw-wallpaper.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size:cover;
-        display: flex;
+    main {
+      text-align: center;
+      width: 100%;
+      height: 900px;
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+        url("./images/zeldaBotw-wallpaper.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: flex;
     }
-    #left-div{
-        min-width: 30%;
-        height: 900px;
-    }
-    #middle-div{
-        width: 40%;
-        height: 900px;
-    }
-    #right-div{
-        min-width: 30%;
-        height: 900px;
-    }
-    footer{
-        width: 100%;
-        height: 10%;
-        background: linear-gradient(#0e5135, #4aba91);
-        text-align: center;
-        font-size: large;
-    }
-   
 
-</style>
-<body>
+    #middle-div {
+      width: 100%;
+      height: 900px;
+    }
+
+    footer {
+      width: 100%;
+      height: 10%;
+      background: linear-gradient(#0e5135, #4aba91);
+      text-align: center;
+      font-size: large;
+    }
+  </style>
+  <body>
     <header>
-        <h1>Hyrule-Compendium</h1>
-        <h3>A collection of BOTW information.</h3>
-        <input id="search-bar" type="text" placeholder="search">
-        <nav id="btn-bar">
-            <!-- <button id="Creatures">Creatures</button>
-            <button id="Equipment">Equipment</button>
-            <button id="Materials">Materials</button>
-            <button id="Monsters">Monsters</button>
-            <button id="Treasure">Treasure</button> -->
-        </nav>
+      <h1>Hyrule-Compendium</h1>
+      <h3>A collection of BOTW information.</h3>
+<!--       <input id="search-bar" type="text" placeholder="search" /> -->
+      <nav id="btn-bar">
+<!--         <button id="Creatures">Creatures</button>
+        <button id="Equipment">Equipment</button>
+        <button id="Materials">Materials</button>
+        <button id="Monsters">Monsters</button>
+        <button id="Treasure">Treasure</button> -->
+      </nav>
     </header>
     <main>
-        <div id="left-div"></div>
-        <div id="middle-div">
-            
-        </div>
-        <div id="right-div"></div>
+    
+      <div id="middle-div"></div>
+
     </main>
     <footer>
-        <h2>Please note that this site is still under development.</h2>
-        <h3>If you find any information lacking or wrong, you can send a request to notareal@email.com</h3>
-        <h3>Thank you! For your understanding and we value your feedback!</h3>
+      <h2>Please note that this site is still under development.</h2>
+      <h3>
+        If you find any information lacking or wrong, you can send a request to
+        notareal@email.com
+      </h3>
+      <h3>Thank you! For your understanding and we value your feedback!</h3>
     </footer>
 
     <script type="module" src="./index.js"></script>
-</body>
+  </body>
 </html>
