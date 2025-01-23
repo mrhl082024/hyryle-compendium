@@ -29,7 +29,7 @@ const treasureResponse = await fetch(
 const treasureData = await treasureResponse.json();
 
 const btnBar = document.querySelector("#btn-bar");
-const middleDiv = document.querySelector("#middle-div");
+const containerDiv = document.querySelector("#container");
 
 const myButtonArray = [
   "Creatures",
@@ -55,7 +55,7 @@ async function createButtons() {
   //what happends when i press creature button
   button0.addEventListener("click", () => {
     console.log("creatures");
-    middleDiv.textContent = "";
+    containerDiv.textContent = "";
     for (let i = 0; i < creaturesData.data.length; i++) {
       const creaturesName = document.createElement("h1");
       creaturesName.textContent = creaturesData.data[i].name;
@@ -67,17 +67,17 @@ async function createButtons() {
       creaturesDescription.textContent = creaturesData.data[i].description;
 
       const creaturesCard = document.createElement("div");
-      creaturesCard.id = "creaturecard" + i;
+      creaturesCard.id = "creaturescard" + i;
       creaturesCard.appendChild(creaturesName);
       creaturesCard.appendChild(creaturesImg);
       creaturesCard.appendChild(creaturesDescription);
 
-      middleDiv.appendChild(creaturesCard);
+      containerDiv.appendChild(creaturesCard);
     }
     //what happends when i press equipment button
     button1.addEventListener("click", () => {
       console.log("equipment");
-      middleDiv.textContent = "";
+      containerDiv.textContent = "";
 
       for (let i = 0; i < equipmentData.data.length; i++) {
         const equipmentName = document.createElement("h1");
@@ -95,13 +95,13 @@ async function createButtons() {
         equipmentCard.appendChild(equipmentImg);
         equipmentCard.appendChild(equipmentDescription);
 
-        middleDiv.appendChild(equipmentCard);
+        containerDiv.appendChild(equipmentCard);
       }
     });
     //what happends when i press materials
     button2.addEventListener("click", () => {
       console.log("materials");
-      middleDiv.textContent = "";
+      containerDiv.textContent = "";
 
       for (let i = 0; i < materialsData.data.length; i++) {
         const materialsName = document.createElement("h1");
@@ -119,13 +119,13 @@ async function createButtons() {
         materialsCard.appendChild(materialsImg);
         materialsCard.appendChild(materialsDescription);
 
-        middleDiv.appendChild(materialsCard);
+        containerDiv.appendChild(materialsCard);
       }
     });
     //what happends when i press monsters button
     button3.addEventListener("click", () => {
       console.log("monsters");
-      middleDiv.textContent = "";
+      containerDiv.textContent = "";
 
       for (let i = 0; i < monstersData.data.length; i++) {
         const monstersName = document.createElement("h1");
@@ -143,13 +143,13 @@ async function createButtons() {
         monstersCard.appendChild(monstersImg);
         monstersCard.appendChild(monstersDescription);
 
-        middleDiv.appendChild(monstersCard);
+        containerDiv.appendChild(monstersCard);
       }
     });
     //what happends when i press treasure button
     button4.addEventListener("click", () => {
       console.log("treasure");
-      middleDiv.textContent = "";
+      containerDiv.textContent = "";
       for (let i = 0; i < treasureData.data.length; i++) {
         const treasureName = document.createElement("h1");
         treasureName.textContent = treasureData.data[i].name;
@@ -166,7 +166,7 @@ async function createButtons() {
         treasureCard.appendChild(treasureImg);
         treasureCard.appendChild(treasureDescription);
 
-        middleDiv.appendChild(treasureCard);
+        containerDiv.appendChild(treasureCard);
       }
     });
   });
