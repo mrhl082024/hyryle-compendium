@@ -19,6 +19,14 @@
       color: #dadada;
       font-size: larger;
     }
+    body{
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+        url("./images/zeldaBotw-wallpaper.jpg");
+        background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
     header {
       width: 100%;
       text-align: center;
@@ -45,32 +53,16 @@
       text-align: center;
       width: 100%;
       height: 900px;
-      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
-        url("./images/zeldaBotw-wallpaper.jpg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
+      
       display: flex;
     }
-    div {
-      display: grid;
-      width: 20%;
-      height: 350px;
-    }
+ 
     #middle-div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
       width: 100%;
       height: 900px;
-    }
-    #info-card {
-      width: 20%;
-      height: 200px;
-    }
-    footer {
-      width: 100%;
-      height: 10%;
-      background: linear-gradient(#0e5135, #4aba91);
-      text-align: center;
-      font-size: large;
     }
   </style>
   <body>
@@ -82,14 +74,6 @@
     <main>
       <div id="middle-div"></div>
     </main>
-    <footer>
-      <h2>Please note that this site is still under development.</h2>
-      <h3>
-        If you find any information lacking or wrong, you can send a request to
-        notareal@email.com
-      </h3>
-      <h3>Thank you! For your understanding and we value your feedback!</h3>
-    </footer>
 
     <script type="module" src="./index.js"></script>
   </body>
