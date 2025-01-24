@@ -1,4 +1,4 @@
-//api fetch for creature data
+/* //api fetch for creature data
 const creaturesResponse = await fetch(
   "https://botw-compendium.herokuapp.com/api/v3/compendium/category/creatures"
 );
@@ -26,11 +26,10 @@ const monstersData = await monstersResponse.json();
 const treasureResponse = await fetch(
   "https://botw-compendium.herokuapp.com/api/v3/compendium/category/treasure"
 );
-const treasureData = await treasureResponse.json();
+const treasureData = await treasureResponse.json(); */
 
 const btnBar = document.querySelector("#btn-bar");
 const containerDiv = document.querySelector("#container");
-
 const myButtonArray = [
   "Creatures",
   "Equipment",
@@ -39,21 +38,46 @@ const myButtonArray = [
   "Treasure",
 ];
 
-async function createButtons() {
+function createButtons() {
   for (let i = 0; i < myButtonArray.length; i++) {
     const button = document.createElement("button");
     button.id = "button" + i;
     button.textContent = myButtonArray[i];
+
+    button.addEventListener("click", async () => {
+      containerDiv.textContent = "";
+      const request = await fetch(
+        `https://botw-compendium.herokuapp.com/api/v3/compendium/category/${button.textContent.toLowerCase()}`
+      );
+      const response = await request.json();
+      for (let i = 0; i < response.data.length; i++) {
+        const dataName = document.createElement("h1");
+        dataName.textContent = response.data[i].name;
+
+        const dataImg = document.createElement("img");
+        dataImg.src = response.data[i].image;
+
+        const dataDescription = document.createElement("p");
+        dataDescription.textContent = response.data[i].description;
+
+        const infoCard = document.createElement("div");
+        infoCard.appendChild(dataName);
+        infoCard.appendChild(dataImg);
+        infoCard.appendChild(dataDescription);
+        
+        containerDiv.appendChild(infoCard)
+      }
+    });
     btnBar.appendChild(button);
   }
-  const button0 = document.querySelector("#button0");
+  /*   const button0 = document.querySelector("#button0");
   const button1 = document.querySelector("#button1");
   const button2 = document.querySelector("#button2");
   const button3 = document.querySelector("#button3");
   const button4 = document.querySelector("#button4");
-
+ */
   //what happends when i press creature button
-  button0.addEventListener("click", () => {
+  /*   button0.addEventListener("click", () => {
     console.log("creatures");
     containerDiv.textContent = "";
     for (let i = 0; i < creaturesData.data.length; i++) {
@@ -168,7 +192,7 @@ async function createButtons() {
 
         containerDiv.appendChild(treasureCard);
       }
-    });
-  });
+    }); */
 }
+
 createButtons();
