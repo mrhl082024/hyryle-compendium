@@ -69,8 +69,12 @@ function createButtons() {
         infoCard.appendChild(dataName);
         infoCard.appendChild(dataImg);
         // infoCard.appendChild(dataDescription);
-
         containerDiv.appendChild(infoCard);
+
+        infoCard.addEventListener("click", () => {
+          
+
+        })
       }
     });
     btnBar.appendChild(button);
