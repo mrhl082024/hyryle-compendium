@@ -30,7 +30,7 @@ const treasureData = await treasureResponse.json(); */
 
 const btnBar = document.querySelector("#btn-bar");
 const containerDiv = document.querySelector("#container");
-const myButtonArray = [
+const categoriesArr = [
   "Creatures",
   "Equipment",
   "Materials",
@@ -38,11 +38,13 @@ const myButtonArray = [
   "Treasure",
 ];
 
+
+
 function createButtons() {
-  for (let i = 0; i < myButtonArray.length; i++) {
+  for (let i = 0; i < categoriesArr.length; i++) {
     const button = document.createElement("button");
     button.id = "button" + i;
-    button.textContent = myButtonArray[i];
+    button.textContent = categoriesArr[i];
 
     button.addEventListener("click", async () => {
       containerDiv.textContent = "";
@@ -51,19 +53,22 @@ function createButtons() {
       );
       const response = await request.json();
       for (let i = 0; i < response.data.length; i++) {
-        const dataName = document.createElement("h1");
+        const dataName = document.createElement("p");
+        dataName.className = "data-name";
         dataName.textContent = response.data[i].name;
 
         const dataImg = document.createElement("img");
+        dataImg.className = "data-img";
         dataImg.src = response.data[i].image;
 
-        const dataDescription = document.createElement("p");
-        dataDescription.textContent = response.data[i].description;
+        // const dataDescription = document.createElement("p");
+        // dataDescription.textContent = response.data[i].description;
 
         const infoCard = document.createElement("div");
+        infoCard.className = "info-card"
         infoCard.appendChild(dataName);
         infoCard.appendChild(dataImg);
-        infoCard.appendChild(dataDescription);
+        // infoCard.appendChild(dataDescription);
 
         containerDiv.appendChild(infoCard);
       }
