@@ -27,6 +27,9 @@
   grid-column-start: 2;
   grid-column-end: 3;
 }
+.category-btn:hover{
+  background-color: rgba(19, 82, 36, 0.76);
+}
 body {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
     url("./images/zeldaBotw-wallpaper.jpg");
@@ -74,6 +77,9 @@ main {
   border: 5px inset rgb(150, 90, 11);
   background-color:#107c4172 ;
   border-radius: 2px;
+}
+.info-card:hover{
+  background-color: rgba(19, 82, 36, 0.76);
 }
 .data-name {
   font-family: "hyrule-serif";
