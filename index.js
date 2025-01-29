@@ -1,5 +1,6 @@
 const btnBar = document.querySelector("#btn-bar");
 const containerDiv = document.querySelector("#container");
+const logoImg = document.getElementById("logo-img")
 const categoriesArr = [
   "Creatures",
   "Equipment",
@@ -7,6 +8,10 @@ const categoriesArr = [
   "Monsters",
   "Treasure",
 ];
+
+logoImg.addEventListener("click", () => {
+  containerDiv.textContent = ""
+}) 
 
 function createButtons() {
   for (let i = 0; i < categoriesArr.length; i++) {
@@ -36,7 +41,9 @@ function createButtons() {
 
         containerDiv.appendChild(infoCard);
 
-        infoCard.addEventListener("click", () => {});
+        infoCard.addEventListener("click", () => {
+          
+        });
       }
     });
     btnBar.appendChild(button);
