@@ -13,6 +13,37 @@ logoImg.addEventListener("click", () => {
   containerDiv.textContent = "";
 });
 
+
+//testing
+
+async function fetchData(category) {
+  try {
+    const req = await fetch(
+      `https://botw-compendium.herokuapp.com/api/v3/compendium/category/${category}`
+    );
+    const res = await req.json();
+    return fetchData.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function loopData(fetchData){
+  const arr= [];
+  for (const [key, actualData] of Object.entries(fetchData)) {
+    arr.push(actualData);
+  }
+  
+}
+
+
+
+
+
+
+
+//testing end
+
 function createButtons() {
   for (let i = 0; i < categoriesArr.length; i++) {
     const button = document.createElement("button");
@@ -53,12 +84,12 @@ function createButtons() {
           cardName.className = "card-name";
           cardName.textContent = response.data[i].name;
 
-          const cardImgContainer = document.createElement("div")
+          const cardImgContainer = document.createElement("div");
           cardImgContainer.className = "card-img-container";
           const cardImg = document.createElement("img");
           cardImg.className = "card-img";
           cardImg.src = response.data[i].image;
-          cardImgContainer.appendChild(cardImg)
+          cardImgContainer.appendChild(cardImg);
 
           const cardDescription = document.createElement("p");
           cardDescription.className = "card-description";
@@ -69,21 +100,18 @@ function createButtons() {
           cardLocations.textContent = "Common Locations: ";
 
           const locations = document.createElement("li");
-          locations.className = "li-locations"
+          locations.className = "li-locations";
           locations.textContent = response.data[i].common_locations;
           cardLocations.appendChild(locations);
-
 
           const cardDrops = document.createElement("ul");
           cardDrops.className = "card-drops";
           cardDrops.textContent = "Drops: ";
 
           const drops = document.createElement("li");
-          drops.className = "li-drops"
+          drops.className = "li-drops";
           drops.textContent = response.data[i].drops;
           cardDrops.appendChild(drops);
-
-
 
           infoCard.appendChild(cardName);
           infoCard.appendChild(cardImgContainer);
