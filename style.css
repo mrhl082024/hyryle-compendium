@@ -23,14 +23,14 @@
   height: 180px;
   padding: 4px 0 0 15px;
 }
-#logo-img:hover{
+#logo-img:hover {
   transform: scale(1.05);
 }
 #btn-bar {
   grid-column-start: 2;
   grid-column-end: 3;
 }
-.category-btn:hover{
+.category-btn:hover {
   background-color: rgba(19, 82, 36, 0.76);
 }
 body {
@@ -61,7 +61,7 @@ main {
   height: 900px;
   display: flex;
 }
-.empty{
+.empty {
   width: 10%;
 }
 #container {
@@ -76,12 +76,12 @@ main {
   height: 300px;
   margin: 10px 10px 10px 10px;
   grid-template-columns: 10% 80% 10%;
-  grid-template-rows:20% 80%;
+  grid-template-rows: 20% 80%;
   border: 5px inset rgb(150, 90, 11);
-  background-color:#107c4172 ;
+  background-color: #107c4172;
   border-radius: 2px;
 }
-.info-card:hover{
+.info-card:hover {
   background-color: rgba(19, 82, 36, 0.76);
 }
 .data-name {
@@ -138,4 +138,69 @@ main {
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
+}
+
+.infoCard {
+  margin-top: 160px;
+  justify-self: center;
+  display: grid;
+  grid-template-areas:
+    "a a a a a b"
+    "c c d d d ."
+    "e e e f f f";
+  background-color: #dadada;
+  width: 880px;
+  height: 500px;
+
+  background-image:url(./images/zelda_botw_shrine.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: inset 5px rgb(150, 90, 11);
+}
+.card-name {
+  grid-area: a;
+}
+.card-img-container {
+  grid-area: c;
+  width: 200px;
+  height: 200px;
+  border: inset 5px rgb(150, 90, 11);
+  justify-self: center;
+}
+.card-img{
+  width: 100%;
+  height: 100%;
+}
+.card-description {
+  font-size: 20px;
+  grid-area: d;
+  justify-self: center;
+}
+.card-locations {
+  grid-area: e;
+  font-size: 20px;
+}
+.li-locations {
+  grid-area: e;
+  font-size: 20px;
+}
+.card-drops {
+  grid-area: f;
+  font-size: 20px;
+}
+.li-drops {
+  grid-area: f;
+  font-size: 20px;
+}
+.close-dialog-btn {
+  grid-area: b;
+  justify-self: end;
+  width: 100px;
+  height: 50px;
+  margin: 4px;
+  border: inset 3px rgb(150, 90, 11);
+}
+.close-dialog-btn:hover{
+  transform: scale(1.05);
+  background-color: rgba(19, 82, 36, 0.76);
 }
