@@ -30,6 +30,11 @@ async function fetchData(category) {
   }
 }
 
+function sortData(){
+  
+
+}
+
 function createButtons() {
   for (let i = 0; i < categoriesArr.length; i++) {
     const button = document.createElement("button");
@@ -40,6 +45,10 @@ function createButtons() {
     //click on a category to load in icons
     button.addEventListener("click", async () => {
       const data = await fetchData(categoriesArr[i].toLowerCase());
+      console.log(data);
+      
+
+
       containerDiv.textContent = "";
 
       for (let i = 0; i < data.length; i++) {
