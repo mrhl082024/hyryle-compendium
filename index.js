@@ -30,9 +30,9 @@ async function fetchData(category) {
   }
 }
 
-function sortData(){
-  
-
+async function sortData(cat){
+  let data = await fetchData(cat)
+  return data.toSorted((a,b) => a.id - b.id)
 }
 
 function createButtons() {
@@ -44,7 +44,7 @@ function createButtons() {
 
     //click on a category to load in icons
     button.addEventListener("click", async () => {
-      const data = await fetchData(categoriesArr[i].toLowerCase());
+      const data = await sortData(categoriesArr[i].toLowerCase());
       console.log(data);
       
 
