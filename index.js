@@ -74,14 +74,14 @@ async function createIcons(category) {
     containerDiv.appendChild(infoIcon);
 
     infoIcon.addEventListener("click", () => {
-      createInfo(category, i);
+      createInfo(data, i);
     });
   }
 }
 
 //function to create the dialog card containing info about whatever icon you clicked.
-async function createInfo(category, i) {
-  const data = await sortData(category);
+function createInfo(_data, i) {
+  const data = _data
 
   const closeDialog = document.createElement("button");
   closeDialog.className = "close-dialog-btn";
