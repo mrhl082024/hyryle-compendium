@@ -56,14 +56,18 @@ function createButtons() {
         dataName.className = "data-name";
         dataName.textContent = data[i].name;
 
+
+        const dataImgContainer = document.createElement("div");
+        dataImgContainer.className = "data-img-container";
         const dataImg = document.createElement("img");
         dataImg.className = "data-img";
         dataImg.src = data[i].image;
+        dataImgContainer.appendChild(dataImg)
 
         const infoIcon = document.createElement("div");
         infoIcon.className = "info-card";
         infoIcon.appendChild(dataName);
-        infoIcon.appendChild(dataImg);
+        infoIcon.appendChild(dataImgContainer);
 
         containerDiv.appendChild(infoIcon);
 
