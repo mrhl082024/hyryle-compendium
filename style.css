@@ -77,6 +77,11 @@ main {
   border: 5px inset rgb(150, 90, 11);
   background-color: #107c4172;
   border-radius: 2px;
+  background-image:url(./images/botw_forest_background.webp);
+  opacity: 90%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .info-card:hover {
   background-color: rgba(19, 82, 36, 0.76);
@@ -152,7 +157,7 @@ main {
   display: grid;
   grid-template-areas:
     "a a a a a b"
-    "c c d d d d"
+    "c c c d d d"
     "e e e f f f";
   background-color: #dadada;
   width: 880px;

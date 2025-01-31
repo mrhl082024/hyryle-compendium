@@ -36,7 +36,7 @@ async function sortData(category) {
 }
 
 //function to create the category buttons.
-function categoryButtons() {
+async function categoryButtons() {
   for (let i = 0; i < categoriesArr.length; i++) {
     const button = document.createElement("button");
     button.className = "category-btn";
@@ -52,7 +52,7 @@ function categoryButtons() {
 categoryButtons();
 
 //function to create the icons after I click a category.
-async function createIcons(category) {
+async function createIcons(category, i) {
   const data = await sortData(category);
   for (let i = 0; i < data.length; i++) {
     const dataName = document.createElement("p");
@@ -81,7 +81,7 @@ async function createIcons(category) {
 
 //function to create the dialog card containing info about whatever icon you clicked.
 function createInfo(_data, i) {
-  const data = _data
+  const data = _data;
 
   const closeDialog = document.createElement("button");
   closeDialog.className = "close-dialog-btn";
@@ -141,7 +141,7 @@ function createInfo(_data, i) {
     infoCard.close();
   });
   closeDialog.addEventListener("keydown", (e) => {
-    if ((e.key === "Escape")) {
+    if (e.key === "Escape") {
       infoCard.textContent = "";
       infoCard.style.display = "none";
       infoCard.close();
