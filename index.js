@@ -118,10 +118,12 @@ function createInfo(_data, i) {
   cardDrops.className = "card-drops";
   cardDrops.textContent = "Drops: ";
 
-  const drops = document.createElement("li");
-  drops.className = "li-drops";
-  drops.textContent = data[i].drops;
-  cardDrops.appendChild(drops);
+  
+    const drops = document.createElement("li");
+    drops.className = "li-drops";
+    drops.textContent = data[i].drops;
+    cardDrops.appendChild(drops);
+  
 
   infoCard.appendChild(cardName);
   infoCard.appendChild(cardImgContainer);
@@ -140,7 +142,7 @@ function createInfo(_data, i) {
     infoCard.style.display = "none";
     infoCard.close();
   });
-  closeDialog.addEventListener("keydown", (e) => {
+  window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       infoCard.textContent = "";
       infoCard.style.display = "none";
