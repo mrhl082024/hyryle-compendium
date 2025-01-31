@@ -131,8 +131,8 @@ main {
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  -webkit-text-stroke: 2px black;
-  paint-order: stroke fill;
+  -webkit-text-stroke: 1px rgb(30, 30, 30);
+  paint-order:normal;
 }
 .header-second-title {
   width: 100%;
@@ -142,6 +142,8 @@ main {
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
+  -webkit-text-stroke: 1px rgb(30, 30, 30);
+  paint-order:normal;
 }
 
 .infoCard {

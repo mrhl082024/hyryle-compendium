@@ -16,6 +16,27 @@ logoImg.addEventListener("click", () => {
 
 //testing
 
+//function to create the category buttons.
+function categoryButtons() {
+  for (let i = 0; i < categoriesArr.length; i++) {
+    const button = document.createElement("button");
+    button.className = "category-btn";
+    button.textContent = categoriesArr[i];
+    btnBar.appendChild(button);
+
+    button.addEventListener("click", () => {
+      containerDiv.textContent = "";
+      createIcons();
+    });
+  }
+}
+
+//function to create the icons after I click a category.
+function createIcons() {}
+
+//function to create the dialog card containing info about whatever icon you clicked.
+function createInfo() {}
+
 //testing end
 
 async function fetchData(category) {
@@ -30,9 +51,9 @@ async function fetchData(category) {
   }
 }
 
-async function sortData(cat){
-  let data = await fetchData(cat)
-  return data.toSorted((a,b) => a.id - b.id)
+async function sortData(category) {
+  let data = await fetchData(category);
+  return data.toSorted((a, b) => a.id - b.id);
 }
 
 function createButtons() {
@@ -46,8 +67,6 @@ function createButtons() {
     button.addEventListener("click", async () => {
       const data = await sortData(categoriesArr[i].toLowerCase());
       console.log(data);
-      
-
 
       containerDiv.textContent = "";
 
@@ -56,13 +75,12 @@ function createButtons() {
         dataName.className = "data-name";
         dataName.textContent = data[i].name;
 
-
         const dataImgContainer = document.createElement("div");
         dataImgContainer.className = "data-img-container";
         const dataImg = document.createElement("img");
         dataImg.className = "data-img";
         dataImg.src = data[i].image;
-        dataImgContainer.appendChild(dataImg)
+        dataImgContainer.appendChild(dataImg);
 
         const infoIcon = document.createElement("div");
         infoIcon.className = "info-card";
